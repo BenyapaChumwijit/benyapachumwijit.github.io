@@ -1,0 +1,48 @@
+body {
+  background-color: lightgoldenrodyellow;
+  padding-left: 200px;
+  font-family: sans-serif;
+}
+
+#profile-head {
+  margin: 0;
+  font-size: 1em;
+}
+
+.page-name {
+  color: red;
+  background-color: yellow;
+}
+
+.page-id {
+  padding: 10px;
+  color: black;
+  border: 5px solid blue;
+}
+
+span {
+  color: blueviolet;
+  font-weight: bold;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+.key-term {
+  color: blueviolet;
+  padding: 2px 2px;
+  font-weight: bold;
+}
+
+h2 {
+  color: brown;
+}
+
+ol.lower-roman {
+  list-style-type: lower-roman;
+}
+
+ul.circle {
+  list-style-type: circle;
+}

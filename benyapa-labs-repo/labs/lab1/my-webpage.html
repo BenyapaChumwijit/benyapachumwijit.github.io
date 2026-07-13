@@ -1,88 +1,441 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>Profile of Benyapa Chumwijit</title>
-    </head>
-    <body>
-      <header>
-        <h1>Benyapa Chumwijit (เบญญาภา ชุ่มวิจิตร)</h1>
-      </header>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เกี่ยวกับเรา | HOOPS &amp; HEART</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;500;600;700&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-dark:#12100e;
+  --bg-panel:#1c1815;
+  --wood:#b8752e;
+  --accent:#ff5a1f;
+  --accent-deep:#c23b0d;
+  --chalk:#f4eee3;
+  --chalk-dim:#c9c2b6;
+  --line:rgba(244,238,227,0.12);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:var(--bg-dark);
+  color:var(--chalk);
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-size:17px;
+  line-height:1.6;
+}
+img,.ph{display:block;width:100%;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-family:'DM Mono',monospace;
+  font-size:13px;
+  letter-spacing:0.14em;
+  color:var(--accent);
+  margin-bottom:18px;
+  text-transform:uppercase;
+}
+.eyebrow .tag{
+  border:1px solid var(--accent);
+  padding:4px 10px;
+  border-radius:2px;
+}
+.eyebrow::after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:var(--line);
+}
+h1,h2,h3{font-family:'Anton',sans-serif;font-weight:400;letter-spacing:0.01em;}
 
-      <nav>
-        <a href="#about">About</a><br>
-        <a href="#interests">Interests</a><br>
-        <a href="#education">Education</a><br>
-        <a href="#contact">Contact</a>
-      </nav>
-      <br>
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(18,16,14,0.92);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.site-header .wrap{
+  display:flex;align-items:center;justify-content:space-between;
+  height:78px;
+}
+.brand{
+  font-family:'Anton',sans-serif;
+  font-size:22px;
+  letter-spacing:0.03em;
+  display:flex;align-items:center;gap:10px;
+}
+.brand .dot{
+  width:10px;height:10px;background:var(--accent);
+  border-radius:50%;
+  box-shadow:0 0 0 3px rgba(255,90,31,0.2);
+}
+nav{display:flex;gap:36px;}
+nav a{
+  font-size:14px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--chalk-dim);
+  position:relative;
+  padding-bottom:4px;
+}
+nav a:hover{color:var(--chalk);}
+nav a.active{color:var(--chalk);}
+nav a.active::after{
+  content:"";
+  position:absolute;left:0;right:0;bottom:-2px;
+  height:2px;background:var(--accent);
+}
+.socials{display:flex;gap:14px;}
+.socials a{
+  width:34px;height:34px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+  color:var(--chalk-dim);
+}
+.socials a:hover{border-color:var(--accent);color:var(--accent);}
 
-      <div class="profile-intro">
-        <figure>
-          <img src="images/Profile.png" width="20%" height="15%" alt="Profile picture of Benyapa"/>
-          <figcaption>Benyapa Chumwijit <br>Student</figcaption>
-        </figure>
-        <aside>
-          <p>Competing in robotics sparked my <strong>passion for programming.</strong>
-          <br>Which is why I want to study <em>Computer Engineering</em> to elevate my skills.</p>
-        </aside>
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:110px 0 90px;
+  background:
+    repeating-linear-gradient(115deg, transparent 0 120px, rgba(184,117,46,0.07) 120px 122px),
+    radial-gradient(circle at 82% 20%, rgba(255,90,31,0.16), transparent 55%),
+    var(--bg-dark);
+}
+.hero-stripe{
+  position:absolute;
+  top:-40%;right:-10%;
+  width:520px;height:220%;
+  background:linear-gradient(180deg, var(--accent-deep), var(--accent));
+  transform:rotate(18deg);
+  opacity:0.12;
+}
+.hero .wrap{position:relative;}
+.hero .scoreboard{
+  display:inline-flex;
+  gap:22px;
+  font-family:'DM Mono',monospace;
+  font-size:13px;
+  color:var(--chalk-dim);
+  border:1px solid var(--line);
+  padding:10px 18px;
+  border-radius:3px;
+  margin-bottom:34px;
+  letter-spacing:0.08em;
+}
+.hero .scoreboard b{color:var(--accent);}
+.hero h1{
+  font-size:clamp(48px,8vw,104px);
+  line-height:0.95;
+  color:var(--chalk);
+}
+.hero h1 span{color:var(--accent);}
+.hero p{
+  max-width:520px;
+  margin-top:26px;
+  font-size:19px;
+  color:var(--chalk-dim);
+}
+
+section{padding:100px 0;}
+.split{
+  display:grid;
+  grid-template-columns:1.05fr 0.95fr;
+  gap:70px;
+  align-items:center;
+}
+.split .ph{
+  aspect-ratio:4/5;
+  background:linear-gradient(160deg,#2a2420,#171310);
+  border:1px solid var(--line);
+  border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--chalk-dim);
+  font-family:'DM Mono',monospace;
+  font-size:12px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+}
+.about h2{font-size:44px;margin-bottom:22px;}
+.about p{color:var(--chalk-dim);margin-bottom:16px;max-width:520px;}
+.about p:last-of-type{margin-bottom:0;}
+
+.goals{
+  background:var(--bg-panel);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.goals-top{max-width:760px;}
+.goals h2{font-size:44px;margin-bottom:20px;}
+.goals > .wrap > p{color:var(--chalk-dim);margin-bottom:40px;max-width:640px;}
+.quote{
+  border-left:3px solid var(--accent);
+  padding:6px 0 6px 26px;
+  margin:0 0 46px;
+  font-size:22px;
+  font-style:italic;
+  color:var(--chalk);
+  max-width:700px;
+}
+.quote cite{
+  display:block;
+  margin-top:12px;
+  font-style:normal;
+  font-family:'DM Mono',monospace;
+  font-size:12px;
+  letter-spacing:0.06em;
+  color:var(--chalk-dim);
+}
+.playbook{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+.playbook li{
+  list-style:none;
+  display:flex;
+  gap:16px;
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:4px;
+  background:rgba(244,238,227,0.02);
+}
+.playbook li .num{
+  font-family:'Anton',sans-serif;
+  font-size:26px;
+  color:var(--accent);
+  line-height:1;
+}
+.playbook li p{color:var(--chalk-dim);font-size:15.5px;}
+
+.services h2{font-size:44px;margin-bottom:16px;}
+.services > .wrap > p{color:var(--chalk-dim);max-width:620px;margin-bottom:56px;}
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
+.card{
+  border:1px solid var(--line);
+  border-radius:4px;
+  overflow:hidden;
+  background:var(--bg-panel);
+  transition:transform 0.25s ease, border-color 0.25s ease;
+}
+.card:hover{transform:translateY(-6px);border-color:var(--accent);}
+.card .ph{
+  aspect-ratio:3/4;
+  background:linear-gradient(160deg,#2a2420,#171310);
+  display:flex;align-items:flex-end;justify-content:flex-end;
+  padding:14px;
+}
+.card .ph span{
+  font-family:'Anton',sans-serif;
+  font-size:34px;
+  color:rgba(255,90,31,0.35);
+}
+.card .label{
+  padding:16px 18px 20px;
+  font-size:16px;
+  letter-spacing:0.03em;
+}
+.card .label small{
+  display:block;
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+  color:var(--accent);
+  letter-spacing:0.1em;
+  margin-bottom:6px;
+  text-transform:uppercase;
+}
+
+.site-footer{
+  background:var(--bg-panel);
+  border-top:1px solid var(--line);
+  padding:80px 0 30px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr;
+  gap:50px;
+  padding-bottom:60px;
+}
+.footer-wordmark{
+  font-family:'Anton',sans-serif;
+  font-size:40px;
+  line-height:1;
+  margin-bottom:18px;
+}
+.footer-wordmark span{color:var(--accent);}
+.footer-grid p{color:var(--chalk-dim);font-size:15px;}
+.footer-col h3{
+  font-family:'DM Mono',monospace;
+  font-size:12px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:16px;
+}
+.footer-col p, .footer-col a{
+  display:block;
+  color:var(--chalk-dim);
+  font-size:15px;
+  margin-bottom:10px;
+}
+.footer-col a:hover{color:var(--chalk);}
+.footer-socials{display:flex;gap:12px;margin-top:6px;}
+.footer-socials a{
+  width:38px;height:38px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+}
+.footer-socials a:hover{border-color:var(--accent);color:var(--accent);}
+.footer-bottom{
+  border-top:1px solid var(--line);
+  padding-top:24px;
+  display:flex;justify-content:space-between;
+  font-family:'DM Mono',monospace;
+  font-size:12px;
+  color:var(--chalk-dim);
+  letter-spacing:0.04em;
+}
+
+@media (max-width:900px){
+  nav{display:none;}
+  .split{grid-template-columns:1fr;gap:36px;}
+  .split .ph{order:-1;aspect-ratio:16/9;}
+  .playbook{grid-template-columns:1fr;}
+  .card-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr;gap:36px;}
+  .footer-bottom{flex-direction:column;gap:8px;}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span>HOOPS &amp; HEART</div>
+    <nav>
+      <a href="#">HOME</a>
+      <a href="#" class="active">ABOUT</a>
+      <a href="#">OUR TEAM</a>
+      <a href="#">PROGRAMS</a>
+    </nav>
+    <div class="socials">
+      <a href="#">Li</a>
+      <a href="#">Fb</a>
+      <a href="#">Ig</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-stripe"></div>
+  <div class="wrap">
+    <div class="scoreboard">Q1 <b>· TIP-OFF</b> &nbsp;|&nbsp; BANGKOK, TH</div>
+    <h1>ABOUT<br>OUR <span>CLUB</span></h1>
+    <p>ข้อความแนะนำสั้น ๆ เกี่ยวกับสโมสรบาสเก็ตบอล Hoops &amp; Heart — แก้ไขตรงนี้ให้เป็นข้อความจริงของคุณ</p>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow"><span class="tag">Q1</span> TIP-OFF</div>
+      <h2>เกี่ยวกับเรา</h2>
+      <p>ข้อความอธิบายความเป็นมาของสโมสร ปีที่ก่อตั้ง และพันธกิจหลัก — แทนที่ด้วยเนื้อหาจริงของคุณได้เลย</p>
+      <p>ย่อหน้าที่สองสำหรับขยายความเรื่องค่านิยมหลักขององค์กร เช่น ครอบครัว ความมุ่งมั่น และการศึกษา</p>
+    </div>
+    <div class="ph">PHOTO PLACEHOLDER</div>
+  </div>
+</section>
+
+<section class="goals">
+  <div class="wrap">
+    <div class="goals-top">
+      <div class="eyebrow"><span class="tag">Q2</span> GAME PLAN</div>
+      <h2>เป้าหมาย &amp; วัตถุประสงค์</h2>
+      <p>ย่อหน้าอธิบายวิสัยทัศน์ระยะยาวของสโมสร และสิ่งที่ต้องการมอบให้ผู้เล่นและผู้ปกครอง — แก้ไขได้ตามต้องการ</p>
+    </div>
+    <blockquote class="quote">
+      "ข้อความคำพูดอ้างอิงจากโค้ชหรือผู้ก่อตั้ง ใส่ประโยคที่สร้างแรงบันดาลใจตรงนี้"
+      <cite>— ชื่อผู้พูด, ตำแหน่ง</cite>
+    </blockquote>
+    <ul class="playbook">
+      <li><span class="num">01</span><p>รายละเอียดเป้าหมายข้อที่หนึ่งของสโมสร แก้ไขข้อความตามจริง</p></li>
+      <li><span class="num">02</span><p>รายละเอียดเป้าหมายข้อที่สองของสโมสร แก้ไขข้อความตามจริง</p></li>
+      <li><span class="num">03</span><p>รายละเอียดเป้าหมายข้อที่สามของสโมสร แก้ไขข้อความตามจริง</p></li>
+      <li><span class="num">04</span><p>รายละเอียดเป้าหมายข้อที่สี่ของสโมสร แก้ไขข้อความตามจริง</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap">
+    <div class="eyebrow"><span class="tag">Q3</span> THE ROSTER</div>
+    <h2>โปรแกรมของเรา</h2>
+    <p>คำอธิบายสั้น ๆ เกี่ยวกับโปรแกรมและบริการทั้งหมดที่สโมสรมีให้ — แก้ไขได้ตามจริง</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="ph"><span>01</span></div>
+        <div class="label"><small>Program</small>โปรแกรมสาธารณะ</div>
       </div>
-      <hr>
+      <div class="card">
+        <div class="ph"><span>02</span></div>
+        <div class="label"><small>Program</small>ค่ายบาสเก็ตบอล</div>
+      </div>
+      <div class="card">
+        <div class="ph"><span>03</span></div>
+        <div class="label"><small>Program</small>คลาสเรียนส่วนตัว</div>
+      </div>
+      <div class="card">
+        <div class="ph"><span>04</span></div>
+        <div class="label"><small>Program</small>ทัวร์นาเมนต์</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <main>
-        <section id="interests">
-          <h2>Interests</h2>
-          <ul>
-            <li><img src="images/listeningToMusic.jpg" width="20%" height="15%" alt="Listening to music"/></li>
-            <li><img src="images/playBas.jpg" width="20%" height="15%" alt="Playing basketball"/></li>
-          </ul>
-        </section>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-wordmark">HOOPS &amp; <span>HEART</span></div>
+        <p>ที่อยู่สโมสร ถนน แขวง เขต จังหวัด รหัสไปรษณีย์ — แก้ไขให้ตรงตามจริง</p>
+      </div>
+      <div class="footer-col">
+        <h3>ติดต่อเรา</h3>
+        <p>Email: info@example.com</p>
+        <p>Tel: (+66) 000000000</p>
+      </div>
+      <div class="footer-col">
+        <h3>ติดตามเรา</h3>
+        <div class="footer-socials">
+          <a href="#">Li</a>
+          <a href="#">Fb</a>
+          <a href="#">Ig</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Q4 · FINAL BUZZER</span>
+      <span>© 2026 HOOPS &amp; HEART. ALL RIGHTS RESERVED.</span>
+    </div>
+  </div>
+</footer>
 
-        <section id="education">
-          <h2>Educational History</h2>
-          <table>
-            <tr>
-              <th>Educational Level</th>
-              <th>Institution</th>
-              <th>Year Graduated</th>
-            </tr>
-            <tr>
-              <td>Junior High School (Grade 7-9)</td>
-              <td>Watpapradoo School</td>
-              <td>2020 (B.E.2563)</td>
-            </tr>
-            <tr>
-              <td>Senior High School (Grade 10-12)</td>
-              <td>Watpapradoo School</td>
-              <td>2023 (B.E.2566)</td>
-            </tr>
-          </table>
-        </section>
-
-        <section id="facts">
-          <h2>Quick Facts</h2>
-          <ul style="list-style-type:circle">
-            <li>Location: <span>Khon Kaen, Thailand</span></li>
-            <li>Occupation: <span>Student</span></li>
-            <li>Department: <span>Computer Engineering</span></li>
-          </ul>
-        </section>
-
-        <section id="contact">
-          <p>Contact Information:</p>
-          <div class="contact-details">
-            <ul style="list-style-type:circle">
-              <li>Email: benyapa.chu@kkumail.com</li>
-              <li>Phone: 0949781794</li>
-              <li>Department: Computer Engimeering</li>
-            </ul>
-            <p>For more information, visit the <a href="https://github.com/BenyapaChumwijit/benyapa-1356-webapp-labs">Benyapa Chumwijit's GitHub</a></p>
-          </div>
-        </section>
-      </main>
-
-      <footer>
-        <p>&copy; 2026 Benyapa Chumwijit</p>
-      </footer>
-    </body>
+</body>
 </html>
