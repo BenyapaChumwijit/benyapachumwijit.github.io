@@ -1,0 +1,340 @@
+/* ==========================================================
+   Simple Profile Stylesheet — 60-30-10 Color System
+   60% White (background) · 30% Black (text/structure) · 10% Blue (accent)
+   ========================================================== */
+
+:root {
+  /* 60% — dominant surface */
+  --white: #ffffff;
+
+  /* 30% — structure & text */
+  --ink: #14161a;
+  --ink-soft: #4a4e58;
+  --hairline: #e4e5ea;
+
+  /* 10% — accent, used only for emphasis & interaction */
+  --blue: #2951ff;
+  --blue-tint: #eef1ff;
+
+  /* Type */
+  --font-body: 'IBM Plex Sans', 'IBM Plex Sans Thai', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ---------- Navigation ---------- */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--hairline);
+  z-index: 10;
+}
+
+nav .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+}
+
+nav .mark {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+nav .mark span {
+  color: var(--blue);
+}
+
+nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+nav a.link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+nav a.link:hover,
+nav a.link:focus-visible {
+  color: var(--blue);
+}
+
+/* ---------- Hero ---------- */
+header.hero {
+  padding: 88px 0 72px;
+  opacity: 0;
+  animation: rise 0.6s ease forwards;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header.hero { animation: none; opacity: 1; }
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--blue);
+}
+
+h1.name-en {
+  font-size: clamp(38px, 6vw, 56px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+h2.name-th {
+  font-family: 'IBM Plex Sans Thai', sans-serif;
+  font-size: clamp(22px, 3.4vw, 30px);
+  font-weight: 500;
+  color: var(--blue);
+  margin-top: 6px;
+}
+
+.tagline {
+  max-width: 480px;
+  color: var(--ink-soft);
+  font-size: 16px;
+  margin-top: 22px;
+}
+
+/* ---------- Section shell ---------- */
+section {
+  padding: 56px 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.section-head .num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--blue);
+}
+
+.section-head h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.section-head .th-label {
+  font-family: 'IBM Plex Sans Thai', sans-serif;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+/* ---------- About ---------- */
+#about p {
+  font-size: 16px;
+  color: var(--ink-soft);
+  max-width: 560px;
+}
+
+#about p + p {
+  margin-top: 14px;
+}
+
+/* ---------- Interest / card grid ---------- */
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.interest-card {
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 18px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.interest-card:hover {
+  border-color: var(--blue);
+  background: var(--blue-tint);
+}
+
+.interest-card .icon {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.interest-card .title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.interest-card .sub {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+
+/* ---------- Timeline / education rows ---------- */
+.edu-item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 20px;
+  padding: 18px 0;
+}
+
+.edu-item + .edu-item {
+  border-top: 1px solid var(--hairline);
+}
+
+.edu-item .years {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  padding-top: 3px;
+}
+
+.edu-item .school {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.edu-item .degree {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-top: 3px;
+}
+
+/* ---------- Contact rows ---------- */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 4px;
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px solid var(--hairline);
+  transition: padding-left 0.15s ease, color 0.15s ease;
+}
+
+.contact-row:hover,
+.contact-row:focus-visible {
+  padding-left: 10px;
+  color: var(--blue);
+}
+
+.contact-row .label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.contact-row .value {
+  flex: 1;
+  font-size: 15px;
+}
+
+.contact-row .arrow {
+  color: var(--blue);
+  font-family: var(--font-mono);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.contact-row:hover .arrow,
+.contact-row:focus-visible .arrow {
+  opacity: 1;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 36px 0 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .small {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+footer .small span {
+  color: var(--blue);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 560px) {
+  .interest-grid { grid-template-columns: 1fr; }
+  .edu-item { grid-template-columns: 1fr; gap: 4px; }
+  nav ul { gap: 14px; }
+  footer { flex-direction: column; align-items: flex-start; gap: 10px; }
+}

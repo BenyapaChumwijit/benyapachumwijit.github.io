@@ -1,0 +1,33 @@
+body {
+  background-color: lightyellow;
+}
+
+.card {
+  width: 250px;
+  border: 3px solid darkslategray;
+  padding: 15px;
+  margin: 20px;
+}
+
+/* Total width of #card-basic = 250px + 15px + 15px + 3px + 3px = 286px */
+
+#card-featured {
+  border-style: dashed;
+  border-color: crimson;
+  background-color: mistyrose;
+}
+
+#card-compact {
+  padding: 5px 25px;
+}
+
+h3 {
+  font-family: "Times New Roman", sans-serif;
+  font-weight: bold;
+}
+
+p {
+  position: relative;
+  font-size: 1em;
+  font-style: italic;
+}
