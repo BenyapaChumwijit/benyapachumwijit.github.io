@@ -1,0 +1,27 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1.title {
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+p {
+  font-size: 1.3rem;
+}
+
+ul {
+  line-height: 1.6;
+}
+
+li {
+  font-size: 1.3rem;
+}
+
+ol {
+  line-height: 1.6;
+}
