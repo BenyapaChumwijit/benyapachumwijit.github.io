@@ -1,0 +1,92 @@
+/* ==========================================================================
+   p2-gallery.css — Responsive Image Gallery
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   Hero image
+   -------------------------------------------------------------------------- */
+
+/* max-width: 100% is preferred over width: 100% because it lets the image
+   shrink to fit narrow viewports without stretching or overflowing, while
+   still allowing the image to display at its natural size (never larger)
+   on wide viewports instead of being forced to stretch edge to edge. */
+.hero {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+/* --------------------------------------------------------------------------
+   Gallery container
+   -------------------------------------------------------------------------- */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   Tiles
+   -------------------------------------------------------------------------- */
+
+.tile {
+  margin: 0; /* figure has a default margin: 1em 40px that breaks width math */
+
+  /* Desktop default (>= 769px): 3 tiles per row.
+     flex-basis is kept slightly under the exact 33.333% fraction so that
+     the two 10px gaps per row still fit before wrapping is triggered;
+     flex-grow: 1 then expands the tiles to fill any leftover space. */
+  flex: 1 1 30%;
+}
+
+.tile img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block; /* removes the baseline gap below inline images */
+}
+
+/* object-fit: cover crops from center by default, which can cut off the
+   subject of a tall portrait photo — shift the crop upward so the subject
+   stays in frame. */
+.tile-portrait img {
+  object-position: 50% 20%;
+}
+
+.tile figcaption {
+  text-align: center;
+  padding: 6px 0;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive breakpoints
+   Only flex-basis changes at each breakpoint — flex-grow and flex-shrink
+   stay at 1 and 1 throughout.
+   -------------------------------------------------------------------------- */
+
+/* Phone / tablet (361px – 768px): 2 tiles per row */
+@media (max-width: 768px) {
+  .tile {
+    flex: 1 1 45%;
+  }
+}
+
+/* Small phone (<= 360px): 1 tile per row */
+@media (max-width: 360px) {
+  .tile {
+    flex: 1 1 100%;
+  }
+}
